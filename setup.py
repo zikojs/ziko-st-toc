@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
     name="ziko-st-toc",
-    version="0.2.0",
+    version="0.3.0",
     author="zakaria elalaoui",
     author_email="zakarialaoui10@gmail.com",
     description="Zikojs based Interactive Table of Contents component for Streamlit.",

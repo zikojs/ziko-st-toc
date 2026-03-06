@@ -1,1 +1,1 @@
-recursive-include table_of_contents/frontend/build *
+recursive-include ziko_st_toc/frontend/build *
