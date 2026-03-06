@@ -83,5 +83,5 @@ If you find **ziko-st-toc** useful, you can support the project by:
 - ⭐ **Star the repository** on GitHub  
 - ⭐ **Star the ZikoJS ecosystem** projects  
 - **Sponsor the development** via [Ko-fi](https://ko-fi.com/zakariaelalaoui)
-...
+- ...
 """)
