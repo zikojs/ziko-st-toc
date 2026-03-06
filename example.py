@@ -1,56 +1,105 @@
 import streamlit as st
 from ziko_st_toc import table_of_contents
 
-st.header('Streamlit Table Of contents')
+st.title('Streamlit Table Of contents')
 
 with st.sidebar:
-    toc = table_of_contents('')
+    toc = table_of_contents(style = {
+        'borderRadius' : '25px',
+        'border' : '3px dotted blue',
+        'backgroundColor' : 'none'
+    })
 
 st.text(toc)
 
-st.subheader('Overview')
-st.image("https://static.streamlit.io/examples/cat.jpg")
-st.subheader('Usage')
-st.image("https://static.streamlit.io/examples/cat.jpg")
+st.header('Overview')
+st.write("""
+`ziko-st-toc` is a lightweight **Table of Contents component for Streamlit**.
+
+It automatically scans the page for headings (`st.title`, `st.header`, `st.subheader`, etc.)
+and generates a clickable navigation menu.
+""")
+
+st.header('Features')
+st.write("""
+- 📑 Auto-detects headers
+- 📌 Click to jump to sections
+- 📚 Works with Streamlit layouts (columns, sidebar)
+- ⚡ Lightweight custom component
+""")
+
+
+## Usage
+st.header('Usage')
+st.subheader('Install')
+st.code('pip install ziko-st-toc', language="bash")
+
+st.subheader('Basic example')
+st.code(
+"""
+import streamlit as st
+from ziko_st_toc import table_of_contents
+
+st.title("My App")
+
+with st.sidebar:
+    table_of_contents()
+
+st.header("Overview")
+st.write("Content...")
+
+st.header("Usage")
+st.write("More content...")
+""",
+language="python"
+)
+
+## 
+
+st.header("About")
+st.subheader('Ecosystem')
+st.write("""
+**ziko-st-toc** is part of the [Zikojs](https://github.com/zikojs) ecosystem.
+    """)
+st.subheader('Dependencies')
+st.markdown("""
+|Library|Description
+|-|-|
+|[ziko](https://github.com/zikojs/ziko)|The core of zikojs ecosystem|
+|[zextra](https://github.com/zikojs/zextra)|Extra components for zikojs|
+""")
 st.subheader('Author')
-st.image("https://static.streamlit.io/examples/cat.jpg")
 
 
+# st.subheader("Author")
+# st.markdown("""
+# **Zakaria El Alaoui**
+
+# Developer of the **Zikojs** ecosystem.  
+# Focused on building lightweight developer tools and reusable UI components.
+# """)
+
+# st.subheader("Dependencies")
+# st.markdown("""
+# `ziko-st-toc` is designed to be lightweight and has minimal dependencies:
+
+# - **Streamlit** – used to render the component inside Streamlit apps.
+# - **JavaScript Table of Contents logic** bundled in the component frontend.
+
+# The package ships its frontend assets inside the wheel, so no additional setup is required.
+# """)
+# st.header('About')
+# st.subheader('Author')
+
+# st.subheader('Dependencies')
+
+# st.write("""
+# **ziko-st-toc** is part of the Ziko ecosystem.
+
+# Author: Zakaria El Alaoui  
+# GitHub: https://github.com/zikojs/ziko-st-toc
+
+# If you find this project useful, consider supporting it ☕
+# """)
 
 
-# col1, col2 = st.columns(2)
-
-# with col1:
-#     st.subheader("Overview")
-#     st.image("https://static.streamlit.io/examples/cat.jpg")
-#     st.subheader("Usage")
-
-# with col2:
-#     table_of_contents('')
-
-
-# # Add some test code to play with the component while it's in development.
-# # During development, we can run this just as we would any other Streamlit
-# # app: `$ streamlit run table_of_contents/example.py`
-
-# st.subheader("Component with constant args")
-
-# # Create an instance of our component with a constant `name` arg, and
-# # print its output value.
-# num_clicks = table_of_contents("World")
-# st.markdown("You've clicked %s times!" % int(num_clicks))
-
-# st.markdown("---")
-# st.subheader("Component with variable args")
-
-# # Create a second instance of our component whose `name` arg will vary
-# # based on a text_input widget.
-# #
-# # We use the special "key" argument to assign a fixed identity to this
-# # component instance. By default, when a component's arguments change,
-# # it is considered a new instance and will be re-mounted on the frontend
-# # and lose its current state. In this case, we want to vary the component's
-# # "name" argument without having it get recreated.
-# name_input = st.text_input("Enter a name", value="Streamlit")
-# num_clicks = table_of_contents(name_input, key="foo")
-# st.markdown("You've clicked %s times!" % int(num_clicks))

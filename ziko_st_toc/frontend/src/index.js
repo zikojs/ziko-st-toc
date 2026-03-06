@@ -5,14 +5,15 @@ const ROOT = document.getElementById('root')
 
 function onRender(event){
   const data = event.detail;
-  const {theme} = data
-  console.log({theme})
+  const {theme, args} = data
+  const {style} = args 
+  console.log({data})
   ROOT.innerHTML = ''
-  const {backgroundColor, primaryColor, textColor} = theme
+  const {backgroundColor, primaryColor} = theme
   const toc = TableOfContents({content : parent.document.body}).style({
     backgroundColor,
     border : `2px solid ${primaryColor}`,
-    padding : '0px'
+    ...style
   }).mount(ROOT);
   const links = toc.toc_list.element.querySelectorAll('a')
 
