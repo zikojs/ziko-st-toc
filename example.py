@@ -1,28 +1,56 @@
 import streamlit as st
 from ziko_st_toc import table_of_contents
 
-# Add some test code to play with the component while it's in development.
-# During development, we can run this just as we would any other Streamlit
-# app: `$ streamlit run table_of_contents/example.py`
+st.header('Streamlit Table Of contents')
 
-st.subheader("Component with constant args")
+with st.sidebar:
+    toc = table_of_contents('')
 
-# Create an instance of our component with a constant `name` arg, and
-# print its output value.
-num_clicks = table_of_contents("World")
-st.markdown("You've clicked %s times!" % int(num_clicks))
+st.text(toc)
 
-st.markdown("---")
-st.subheader("Component with variable args")
+st.subheader('Overview')
+st.image("https://static.streamlit.io/examples/cat.jpg")
+st.subheader('Usage')
+st.image("https://static.streamlit.io/examples/cat.jpg")
+st.subheader('Author')
+st.image("https://static.streamlit.io/examples/cat.jpg")
 
-# Create a second instance of our component whose `name` arg will vary
-# based on a text_input widget.
-#
-# We use the special "key" argument to assign a fixed identity to this
-# component instance. By default, when a component's arguments change,
-# it is considered a new instance and will be re-mounted on the frontend
-# and lose its current state. In this case, we want to vary the component's
-# "name" argument without having it get recreated.
-name_input = st.text_input("Enter a name", value="Streamlit")
-num_clicks = table_of_contents(name_input, key="foo")
-st.markdown("You've clicked %s times!" % int(num_clicks))
+
+
+
+# col1, col2 = st.columns(2)
+
+# with col1:
+#     st.subheader("Overview")
+#     st.image("https://static.streamlit.io/examples/cat.jpg")
+#     st.subheader("Usage")
+
+# with col2:
+#     table_of_contents('')
+
+
+# # Add some test code to play with the component while it's in development.
+# # During development, we can run this just as we would any other Streamlit
+# # app: `$ streamlit run table_of_contents/example.py`
+
+# st.subheader("Component with constant args")
+
+# # Create an instance of our component with a constant `name` arg, and
+# # print its output value.
+# num_clicks = table_of_contents("World")
+# st.markdown("You've clicked %s times!" % int(num_clicks))
+
+# st.markdown("---")
+# st.subheader("Component with variable args")
+
+# # Create a second instance of our component whose `name` arg will vary
+# # based on a text_input widget.
+# #
+# # We use the special "key" argument to assign a fixed identity to this
+# # component instance. By default, when a component's arguments change,
+# # it is considered a new instance and will be re-mounted on the frontend
+# # and lose its current state. In this case, we want to vary the component's
+# # "name" argument without having it get recreated.
+# name_input = st.text_input("Enter a name", value="Streamlit")
+# num_clicks = table_of_contents(name_input, key="foo")
+# st.markdown("You've clicked %s times!" % int(num_clicks))

@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "streamlit-component-lib": "^2.0.0"
+    "streamlit-component-lib": "^2.0.0",
+    "zextra": "^0.15.2",
+    "ziko": "^0.70.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.1",
