@@ -43,11 +43,12 @@ else:
 # `declare_component` and call it done. The wrapper allows us to customize
 # our component's API: we can pre-process its input args, post-process its
 # output value, and add a docstring for users.
-def table_of_contents(name, key=None):
+def table_of_contents(level = 2):
     """Create a new instance of "table_of_contents".
 
     Parameters
     ----------
+    level: int
     name: str
         The name of the thing we're saying hello to. The component will display
         the text "Hello, {name}!"
@@ -70,7 +71,7 @@ def table_of_contents(name, key=None):
     #
     # "default" is a special argument that specifies the initial return
     # value of the component before the user has interacted with it.
-    component_value = _component_func(name=name, key=key, default=0)
+    component_value = _component_func(level=level, default=0)
 
     # We could modify the value returned from the component if we wanted.
     # There's no need to do this in our simple example - but it's an option.
