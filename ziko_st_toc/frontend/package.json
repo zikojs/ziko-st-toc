@@ -1,33 +1,32 @@
 {
-  "name": "ziko_st_toc",
+  "name": "table_of_contents",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "scripts": {
-    "build": "npm run clean && npm run typecheck && npm run build:frontend:production",
-    "build:frontend:production": "cross-env NODE_ENV=production vite build",
-    "clean": "rimraf build",
-    "dev": "cross-env NODE_ENV=development vite build --watch",
-    "format": "prettier --write src/**/*.ts vite.config.ts",
-    "typecheck": "tsc --noEmit"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "prettier": {},
   "dependencies": {
-    "@streamlit/component-v2-lib": "^0.2.0"
+    "streamlit-component-lib": "^2.0.0"
   },
   "devDependencies": {
-    "cross-env": "^10.1.0",
+    "@types/node": "^22.14.1",
     "prettier": "^3.6.2",
-    "rimraf": "^6.1.0",
     "typescript": "^5.8.3",
-    "vite": "^7.1.12"
-  }
+    "vite": "^6.4.1"
+  },
+  "scripts": {
+    "start": "vite",
+    "build": "tsc && vite build"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "homepage": "."
 }
-
-

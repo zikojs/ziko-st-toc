@@ -1,19 +1,11 @@
 # ziko-st-toc
 
-Interactive Table of Contents component for Streamlit.
+Zikojs based Interactive Table of Contents component for Streamlit.
 
 ## Installation instructions
 
 ```sh
-uv pip install ziko-st-toc
-```
-
-### Development install (editable)
-
-When developing this component locally, install it in editable mode so Streamlit picks up code changes without rebuilding a wheel. Run this from the directory that contains `pyproject.toml`:
-
-```sh
-uv pip install -e . --force-reinstall
+pip install ziko-st-toc
 ```
 
 ## Usage instructions
@@ -21,37 +13,30 @@ uv pip install -e . --force-reinstall
 ```python
 import streamlit as st
 
-from ziko_st_toc import ziko_st_toc
+from ziko_st_toc import table_of_contents
 
-value = ziko_st_toc()
+value = table_of_contents()
 
 st.write(value)
 ```
 
-## Build a wheel
+## Local development
 
-To package this component for distribution:
-
-1. Build the frontend assets (from `ziko_st_toc/frontend`):
+1. Start Streamlit from the project root:
 
    ```sh
-   npm i
-   npm run build
+   streamlit run ziko_st_toc/example.py
    ```
 
-2. Build the Python wheel using UV (from the project root):
+2. In another terminal, run the Vite dev server from `ziko_st_toc/frontend`:
+
    ```sh
-   uv build
+   npm install
+   npm run start
    ```
 
-This will create a `dist/` directory containing your wheel. The wheel includes the compiled frontend from `ziko_st_toc/frontend/build`.
+### Important dev server notes
 
-### Requirements
-
-- Python >= 3.10
-- Node.js >= 24 (LTS)
-
-### Expected output
-
-- `dist/ziko_st_toc-0.0.1-py3-none-any.whl`
-- If you run `uv run --with build python -m build` (without `--wheel`), you’ll also get an sdist: `dist/ziko-st-toc-0.0.1.tar.gz`
+- The browser connects to the Vite dev server directly. Streamlit does **not** proxy this port, so the Vite port must be reachable from the client just like the Streamlit port.
+- Vite listens on the value of `VITE_PORT` (default `3001`). This variable lives in `ziko_st_toc/frontend/.env`. Update that file whenever you need to change the port, and remember that Windows/WSL/Hyper-V or dev containers may silently remap addresses like `3001`.
+- If a port is unavailable or blocked by a firewall/mobile connection, set `VITE_PORT=5173` (Vite's default) or any other open port inside the `.env` file before running `npm run start`, and ensure that port is reachable from your browser.

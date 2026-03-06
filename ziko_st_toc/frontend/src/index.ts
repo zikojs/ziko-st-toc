@@ -1,63 +1,75 @@
-import {
-  FrontendRenderer,
-  FrontendRendererArgs,
-} from "@streamlit/component-v2-lib";
+import { Streamlit, RenderData } from "streamlit-component-lib"
 
-export type FrontendState = {
-  num_clicks: number;
-};
+// Add text and a button to the DOM. (You could also add these directly
+// to index.html.)
+const span = document.body.appendChild(document.createElement("span"))
+const textNode = span.appendChild(document.createTextNode(""))
+const button = span.appendChild(document.createElement("button"))
+button.textContent = "Click Me!"
 
-export type ComponentData = {
-  name: string;
-};
+// Add a click handler to our button. It will send data back to Streamlit.
+let numClicks = 0
+let isFocused = false
+button.onclick = function (): void {
+  // Increment numClicks, and pass the new value back to
+  // Streamlit via `Streamlit.setComponentValue`.
+  numClicks += 1
+  Streamlit.setComponentValue(numClicks)
+}
 
-// Handle the possibility of multiple instances of the component to keep track
-// of any long-running state for each component instance.
-const instances: WeakMap<
-  FrontendRendererArgs["parentElement"],
-  { numClicks: number }
-> = new WeakMap();
+button.onfocus = function (): void {
+  isFocused = true
+}
 
-const MyComponent: FrontendRenderer<FrontendState, ComponentData> = (
-  args
-) => {
-  const { parentElement, data, setStateValue } = args;
+button.onblur = function (): void {
+  isFocused = false
+}
 
-  const rootElement = parentElement.querySelector(".component-root");
-  if (!rootElement) {
-    throw new Error("Unexpected: root element not found");
+/**
+ * The component's render function. This will be called immediately after
+ * the component is initially loaded, and then again every time the
+ * component gets new data from Python.
+ */
+function onRender(event: Event): void {
+  // Get the RenderData from the event
+  const data = (event as CustomEvent<RenderData>).detail
+
+  // Maintain compatibility with older versions of Streamlit that don't send
+  // a theme object.
+  if (data.theme) {
+    // Use CSS vars to style our button border. Alternatively, the theme style
+    // is defined in the data.theme object.
+    const borderStyling = `1px solid var(${
+      isFocused ? "--primary-color" : "gray"
+    })`
+    button.style.border = borderStyling
+    button.style.outline = borderStyling
   }
 
-  // Set dynamic content
-  const heading = rootElement.querySelector("h1");
-  if (heading) {
-    heading.textContent = `Hello, ${data.name}!`;
-  }
+  // Disable our button if necessary.
+  button.disabled = data.disabled
 
-  // Wire up interactions on existing DOM from Python-provided HTML
-  const button = rootElement.querySelector<HTMLButtonElement>("button");
-  if (!button) {
-    throw new Error("Unexpected: button element not found");
-  }
+  // RenderData.args is the JSON dictionary of arguments sent from the
+  // Python script.
+  let name = data.args["name"]
 
-  const handleClick = () => {
-    const numClicks = (instances.get(parentElement)?.numClicks || 0) + 1;
-    instances.set(parentElement, { numClicks });
-    setStateValue("num_clicks", numClicks);
-  };
+  // Show "Hello, name!" with a non-breaking space afterwards.
+  textNode.textContent = `Hello, ${name}! ` + String.fromCharCode(160)
 
-  // Set up event listener for the button when the component is first
-  // initialized
-  if (!instances.has(parentElement)) {
-    button.addEventListener("click", handleClick);
-    instances.set(parentElement, { numClicks: 0 });
-  }
+  // We tell Streamlit to update our frameHeight after each render event, in
+  // case it has changed. (This isn't strictly necessary for the example
+  // because our height stays fixed, but this is a low-cost function, so
+  // there's no harm in doing it redundantly.)
+  Streamlit.setFrameHeight()
+}
 
-  // Cleanup
-  return () => {
-    button.removeEventListener("click", handleClick);
-    instances.delete(parentElement);
-  };
-};
+// Attach our `onRender` handler to Streamlit's render event.
+Streamlit.events.addEventListener(Streamlit.RENDER_EVENT, onRender)
 
-export default MyComponent;
+// Tell Streamlit we're ready to start receiving data. We won't get our
+// first RENDER_EVENT until we call this function.
+Streamlit.setComponentReady()
+
+// Finally, tell Streamlit to update our initial height. We omit the
+// `height` parameter here to have it default to our scrollHeight.
+Streamlit.setFrameHeight()

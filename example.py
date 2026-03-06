@@ -1,16 +1,16 @@
 import streamlit as st
-from ziko_st_toc import ziko_st_toc
+from ziko_st_toc import table_of_contents
 
 # Add some test code to play with the component while it's in development.
 # During development, we can run this just as we would any other Streamlit
-# app: `$ streamlit run ziko_st_toc/example.py`
+# app: `$ streamlit run table_of_contents/example.py`
 
 st.subheader("Component with constant args")
 
 # Create an instance of our component with a constant `name` arg, and
 # print its output value.
-result = ziko_st_toc("World")
-st.markdown("You've clicked %s times!" % int(result["num_clicks"]))
+num_clicks = table_of_contents("World")
+st.markdown("You've clicked %s times!" % int(num_clicks))
 
 st.markdown("---")
 st.subheader("Component with variable args")
@@ -24,5 +24,5 @@ st.subheader("Component with variable args")
 # and lose its current state. In this case, we want to vary the component's
 # "name" argument without having it get recreated.
 name_input = st.text_input("Enter a name", value="Streamlit")
-result = ziko_st_toc(name_input, key="foo")
-st.markdown("You've clicked %s times!" % int(result["num_clicks"]))
+num_clicks = table_of_contents(name_input, key="foo")
+st.markdown("You've clicked %s times!" % int(num_clicks))

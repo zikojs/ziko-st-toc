@@ -1,2 +1,1 @@
-recursive-include ziko_st_toc/frontend/build *
-include pyproject.toml
+recursive-include table_of_contents/frontend/build *
