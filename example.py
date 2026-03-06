@@ -4,13 +4,16 @@ from ziko_st_toc import table_of_contents
 st.title('Streamlit Table Of contents')
 
 with st.sidebar:
-    toc = table_of_contents(style = {
+    toc = table_of_contents(
+        style = {
         'borderRadius' : '25px',
         'border' : '3px dotted blue',
         'backgroundColor' : 'none'
-    })
+        },
+        usehash = False
+    )
 
-st.text(toc)
+# st.text(toc)
 
 st.header('Overview')
 st.write("""
@@ -69,37 +72,16 @@ st.markdown("""
 |[zextra](https://github.com/zikojs/zextra)|Extra components for zikojs|
 """)
 st.subheader('Author')
+st.write("""
+- Github : https://github.com/zakarialaoui10
+- Linkedin : https://www.linkedin.com/in/zakaria-elalaoui-810ab41b8/
+""")
+st.subheader('Support')
+st.markdown("""
+If you find **ziko-st-toc** useful, you can support the project by:
 
-
-# st.subheader("Author")
-# st.markdown("""
-# **Zakaria El Alaoui**
-
-# Developer of the **Zikojs** ecosystem.  
-# Focused on building lightweight developer tools and reusable UI components.
-# """)
-
-# st.subheader("Dependencies")
-# st.markdown("""
-# `ziko-st-toc` is designed to be lightweight and has minimal dependencies:
-
-# - **Streamlit** – used to render the component inside Streamlit apps.
-# - **JavaScript Table of Contents logic** bundled in the component frontend.
-
-# The package ships its frontend assets inside the wheel, so no additional setup is required.
-# """)
-# st.header('About')
-# st.subheader('Author')
-
-# st.subheader('Dependencies')
-
-# st.write("""
-# **ziko-st-toc** is part of the Ziko ecosystem.
-
-# Author: Zakaria El Alaoui  
-# GitHub: https://github.com/zikojs/ziko-st-toc
-
-# If you find this project useful, consider supporting it ☕
-# """)
-
-
+- ⭐ **Star the repository** on GitHub  
+- ⭐ **Star the ZikoJS ecosystem** projects  
+- **Sponsor the development** via [Ko-fi](https://ko-fi.com/zakariaelalaoui)
+...
+""")

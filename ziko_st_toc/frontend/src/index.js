@@ -6,8 +6,7 @@ const ROOT = document.getElementById('root')
 function onRender(event){
   const data = event.detail;
   const {theme, args} = data
-  const {style} = args 
-  console.log({data})
+  const {style, usehash} = args 
   ROOT.innerHTML = ''
   const {backgroundColor, primaryColor} = theme
   const toc = TableOfContents({content : parent.document.body}).style({
@@ -28,6 +27,7 @@ function onRender(event){
         const el = parent.document.getElementById(id);
         if (el) {
           el.scrollIntoView({ behavior: 'smooth' });
+          if(usehash) parent.history.replaceState(null, "", `#${id}`);
         }
       } catch (err) {
         window.parent.postMessage({ type: 'toc-scroll', id }, '*');

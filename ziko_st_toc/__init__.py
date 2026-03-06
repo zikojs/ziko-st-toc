@@ -43,36 +43,50 @@ else:
 # `declare_component` and call it done. The wrapper allows us to customize
 # our component's API: we can pre-process its input args, post-process its
 # output value, and add a docstring for users.
-def table_of_contents(level = 2, style = ''):
-    """Create a new instance of "table_of_contents".
+def table_of_contents(level=2, style=None, usehash=True, key=None):
+    """
+    Render a Table of Contents for the current Streamlit page.
+
+    The component scans the page for headings (`h1`–`h6`) and generates
+    a navigation list that allows users to quickly jump to sections.
 
     Parameters
     ----------
-    level: int
-    name: str
-        The name of the thing we're saying hello to. The component will display
-        the text "Hello, {name}!"
-    key: str or None
-        An optional key that uniquely identifies this component. If this is
-        None, and the component's arguments are changed, the component will
-        be re-mounted in the Streamlit frontend and lose its current state.
+    level : int, default=2
+        Maximum heading level to include in the table of contents.
+        For example:
+        - 1 → only `h1`
+        - 2 → `h1`, `h2`
+        - 3 → `h1`, `h2`, `h3`
+        - up to `h6`.
+
+    style : dict, optional
+        Custom CSS styles applied to the table of contents container.
+        Example:
+        `{"position": "sticky", "top": "1rem"}`
+
+    usehash : bool, default=True
+        If True, clicking a TOC link updates the page URL hash (`#section-id`)
+        to reflect the selected heading.
+
+    key : str or None, optional
+        Unique key for the component instance. Needed when using multiple
+        TOC components in the same app.
 
     Returns
     -------
-    int
-        The number of times the component's "Click Me" button has been clicked.
-        (This is the value passed to `Streamlit.setComponentValue` on the
-        frontend.)
-
+    dict or None
+        Returns a dictionary containing interaction data from the component.
+        Example:
+        `{"last_clicked_id": "usage"}`
     """
-    # Call through to our private component function. Arguments we pass here
-    # will be sent to the frontend, where they'll be available in an "args"
-    # dictionary.
-    #
-    # "default" is a special argument that specifies the initial return
-    # value of the component before the user has interacted with it.
-    component_value = _component_func(level=level, style=style, default=0)
 
-    # We could modify the value returned from the component if we wanted.
-    # There's no need to do this in our simple example - but it's an option.
+    component_value = _component_func(
+        level=level,
+        style=style or {},
+        usehash=usehash,
+        key=key,
+        default=None,
+    )
+
     return component_value
