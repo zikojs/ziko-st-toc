@@ -3,17 +3,17 @@ from pathlib import Path
 import setuptools
 
 this_directory = Path(__file__).parent
-long_description = (this_directory / "README.md").read_text()
+long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 setuptools.setup(
     name="ziko-st-toc",
-    version="0.3.0",
+    version="0.4.0",
     author="zakaria elalaoui",
     author_email="zakarialaoui10@gmail.com",
     description="Zikojs based Interactive Table of Contents component for Streamlit.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="",
+    url="https://ziko-st-toc.streamlit.app/",
     packages=setuptools.find_packages(),
     include_package_data=True,
     classifiers=[],

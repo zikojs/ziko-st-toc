@@ -1,9 +1,13 @@
 # ziko-st-toc
 
-[![ziko-st-banner](https://github.com/zikojs/ziko-st-toc/blob/main/assets/banner.png?raw=true)](https://github.com/zakarialaoui10/zikojs)
+[![ziko-st-banner](https://github.com/zikojs/ziko-st-toc/blob/main/assets/banner.png?raw=true)](https://github.com/zikojs)
 
 
 Zikojs based Interactive Table of Contents component for Streamlit.
+
+## Showcase
+
+![ziko-st-toc demo](./assets/demo.gif)
 
 ## Installation instructions
 
@@ -37,4 +41,11 @@ st.header('Header III')
 # Content ..
 ```
 
-## Licence
+## ⭐️ Show your support <a name="support"></a>
+
+If you appreciate the library, kindly demonstrate your support by giving it a star!<br>
+[![Star](https://img.shields.io/github/stars/zakarialaoui10/ziko.js?style=social)](https://github.com/zakarialaoui10/ziko.js)
+
+
+## License 
+This projet is licensed under the terms of MIT License 
