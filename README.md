@@ -7,7 +7,9 @@ Zikojs based Interactive Table of Contents component for Streamlit.
 
 ## Showcase
 
-![ziko-st-toc demo](./assets/demo.gif)
+![ziko-st-toc demo](https://raw.githubusercontent.com/zikojs/ziko-st-toc/refs/heads/main/assets/demo.gif)
+
+Visit : https://ziko-st-toc.streamlit.app/
 
 ## Installation instructions
 
