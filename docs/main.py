@@ -6,9 +6,7 @@ st.title('Streamlit Table Of contents')
 with st.sidebar:
     toc = table_of_contents(
         style = {
-        'borderRadius' : '25px',
-        'border' : '3px dotted blue',
-        'backgroundColor' : 'none'
+        'borderRadius' : '5px',
         },
         usehash = False
     )
@@ -70,6 +68,8 @@ st.markdown("""
 |-|-|
 |[ziko](https://github.com/zikojs/ziko)|The core of zikojs ecosystem|
 |[zextra](https://github.com/zikojs/zextra)|Extra components for zikojs|
+|[streamlit-component-lib](https://github.com/streamlit/streamlit/tree/develop/component-lib)|An npm package that provides support code for creating Streamlit Components.|
+|[vite](https://vite.dev/)|Next generation frontend tooling|
 """)
 st.subheader('Author')
 st.write("""
