@@ -1,5 +1,8 @@
 # ziko-st-toc
 
+[![ziko-st-banner](https://raw.githubusercontent.com/zakarialaoui10/ziko-i18n/606f5caf87b1d41184c7989c11e5272c68a375ab/assets/banner.svg)](https://github.com/zakarialaoui10/zikojs)
+
+
 Zikojs based Interactive Table of Contents component for Streamlit.
 
 ## Installation instructions
@@ -15,28 +18,23 @@ import streamlit as st
 
 from ziko_st_toc import table_of_contents
 
-value = table_of_contents()
+st.title('Streamlit Table Of contents')
 
-st.write(value)
+with st.sidebar:
+   table_of_contents()
+
+st.header('Header I')
+# Content ..
+st.header('Header II')
+# Content ..
+st.subheader('Sub Header II-1')
+# Content ..
+st.subheader('Sub Header II-2')
+# Content ..
+st.subheader('Sub Header II-3')
+# Content ..
+st.header('Header III')
+# Content ..
 ```
 
-## Local development
-
-1. Start Streamlit from the project root:
-
-   ```sh
-   streamlit run ziko_st_toc/example.py
-   ```
-
-2. In another terminal, run the Vite dev server from `ziko_st_toc/frontend`:
-
-   ```sh
-   npm install
-   npm run start
-   ```
-
-### Important dev server notes
-
-- The browser connects to the Vite dev server directly. Streamlit does **not** proxy this port, so the Vite port must be reachable from the client just like the Streamlit port.
-- Vite listens on the value of `VITE_PORT` (default `3001`). This variable lives in `ziko_st_toc/frontend/.env`. Update that file whenever you need to change the port, and remember that Windows/WSL/Hyper-V or dev containers may silently remap addresses like `3001`.
-- If a port is unavailable or blocked by a firewall/mobile connection, set `VITE_PORT=5173` (Vite's default) or any other open port inside the `.env` file before running `npm run start`, and ensure that port is reachable from your browser.
+## Licence
