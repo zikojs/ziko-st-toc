@@ -1,6 +1,6 @@
 # ziko-st-toc
 
-[![ziko-st-banner](https://raw.githubusercontent.com/zakarialaoui10/ziko-i18n/606f5caf87b1d41184c7989c11e5272c68a375ab/assets/banner.svg)](https://github.com/zakarialaoui10/zikojs)
+[![ziko-st-banner](https://github.com/zikojs/ziko-st-toc/blob/main/assets/banner.png?raw=true)](https://github.com/zakarialaoui10/zikojs)
 
 
 Zikojs based Interactive Table of Contents component for Streamlit.
