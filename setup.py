@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 setuptools.setup(
     name="ziko-st-toc",
-    version="0.4.0",
+    version="0.4.1",
     author="zakaria elalaoui",
     author_email="zakarialaoui10@gmail.com",
     description="Zikojs based Interactive Table of Contents component for Streamlit.",
@@ -16,7 +16,7 @@ setuptools.setup(
     url="https://ziko-st-toc.streamlit.app/",
     packages=setuptools.find_packages(),
     include_package_data=True,
-    license_files=("LICENSE")
+    license_files=("LICENSE"),
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
@@ -29,7 +29,7 @@ setuptools.setup(
         "Source": "https://github.com/zakarialaoui10/ziko-st-toc",
         "Tracker": "https://github.com/zakarialaoui10/ziko-st-toc/issues",
         "Documentation": "https://ziko-st-toc.streamlit.app/",
-    }
+    },
     python_requires=">=3.7",
     install_requires=[
         "streamlit >= 0.63",
