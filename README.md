@@ -3,7 +3,7 @@
 [![ziko-st-banner](https://github.com/zikojs/ziko-st-toc/blob/main/assets/banner.png?raw=true)](https://github.com/zikojs)
 
 
-Zikojs based Interactive Table of Contents component for Streamlit.
+A Streamlit component that generates an interactive Table of Contents (TOC) with smooth scrolling and navigation.
 
 ## Showcase
 

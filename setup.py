@@ -16,12 +16,22 @@ setuptools.setup(
     url="https://ziko-st-toc.streamlit.app/",
     packages=setuptools.find_packages(),
     include_package_data=True,
-    classifiers=[],
+    license_files=("LICENSE")
+    classifiers=[
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3",
+        "Framework :: Streamlit",
+        "Operating System :: OS Independent",
+        "Topic :: Software Development :: Libraries",
+    ],
+    keywords="streamlit table-of-contents toc navigation zikojs",
+    project_urls={
+        "Source": "https://github.com/zakarialaoui10/ziko-st-toc",
+        "Tracker": "https://github.com/zakarialaoui10/ziko-st-toc/issues",
+        "Documentation": "https://ziko-st-toc.streamlit.app/",
+    }
     python_requires=">=3.7",
     install_requires=[
-        # By definition, a Custom Component depends on Streamlit.
-        # If your component has other Python dependencies, list
-        # them here.
         "streamlit >= 0.63",
     ],
     extras_require={
