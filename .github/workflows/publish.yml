@@ -9,12 +9,12 @@ jobs:
   publish:
     runs-on: ubuntu-latest
 
-permissions:
-  id-token: write  
-  contents: read
+  permissions:
+    id-token: write  
+    contents: read
 
-environment:
-  name: pypi
+  environment:
+    name: pypi
 
 steps:
   - name: Checkout repository
