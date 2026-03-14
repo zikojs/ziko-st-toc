@@ -1,5 +1,11 @@
 # ziko-st-toc
 
+
+[![PyPI version](https://img.shields.io/pypi/v/ziko-st-toc.svg)](https://pypi.org/project/ziko-st-toc/)
+[![Downloads](https://img.shields.io/pypi/dm/ziko-st-toc)](https://pypi.org/project/ziko-st-toc/)
+[![License](https://img.shields.io/pypi/l/ziko-st-toc.svg)]()
+
+
 [![ziko-st-banner](https://github.com/zikojs/ziko-st-toc/blob/main/assets/banner.png?raw=true)](https://github.com/zikojs)
 
 
@@ -46,7 +52,7 @@ st.header('Header III')
 ## ⭐️ Show your support <a name="support"></a>
 
 If you appreciate the library, kindly demonstrate your support by giving it a star!<br>
-[![Star](https://img.shields.io/github/stars/zakarialaoui10/ziko.js?style=social)](https://github.com/zakarialaoui10/ziko.js)
+<!-- [![Star](https://img.shields.io/github/stars/zikojs/ziko-st-toc?style=social)](https://github.com/zikojs/ziko-st-toc) -->
 
 
 ## License 
