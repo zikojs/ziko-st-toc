@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 setuptools.setup(
     name="ziko-st-toc",
-    version="1.0.2",
+    version="1.0.3",
     author="zakaria.elalaloui",
     author_email="zakarialaoui10@gmail.com",
     description="A Streamlit component that generates an interactive Table of Contents (TOC) with smooth scrolling and navigation.",
@@ -20,8 +20,12 @@ setuptools.setup(
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
+        "Programming Language :: JavaScript",
         "Operating System :: OS Independent",
         "Topic :: Software Development :: Libraries",
+        "Topic :: Text Processing :: Markup :: HTML",
+        "Environment :: Web Environment",
+        "Intended Audience :: Developers",
     ],
     keywords="streamlit table-of-contents toc navigation zikojs",
     project_urls={
