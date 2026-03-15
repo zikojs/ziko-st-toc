@@ -17,9 +17,17 @@ export default defineConfig({
         base : '/intro/',
         items : [
           { text: "Get started", link: "get-started" },
+          { text: "About", link: "about" },
           { text: "Supports", link: "supports" },
         ]
       },
+      {
+        text : 'Advanced',
+        base : '/advanced',
+        items : [
+          
+        ]
+      }
       // {
       //   text: 'Examples',
       //   items: [
