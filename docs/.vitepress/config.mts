@@ -38,7 +38,8 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/zikojs/ziko-st-toc' }
+      { icon: 'github', link: 'https://github.com/zikojs/ziko-st-toc' },
+      { icon: 'streamlit', link: 'https://ziko-st-toc-demo.streamlit.app/' },
     ]
   }
 })
