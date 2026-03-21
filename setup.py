@@ -7,13 +7,13 @@ long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 setuptools.setup(
     name="ziko-st-toc",
-    version="1.0.4",
+    version="1.0.5",
     author="zakaria.elalaloui",
     author_email="zakarialaoui10@gmail.com",
     description="A Streamlit component that generates an interactive Table of Contents (TOC) with smooth scrolling and navigation.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://ziko-st-toc.streamlit.app/",
+    url="https://ziko-st-toc.netlify.app/",
     packages=setuptools.find_packages(),
     include_package_data=True,
     license_files=("LICENSE"),
