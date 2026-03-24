@@ -8,7 +8,7 @@ with st.sidebar:
         style = {
         'borderRadius' : '5px',
         },
-        usehash = False
+        useHash = False
     )
 
 # st.text(toc)
