@@ -5,10 +5,10 @@ st.title('Streamlit Table Of contents')
 
 with st.sidebar:
     toc = table_of_contents(
-        style = {
-        'borderRadius' : '5px',
-        },
-        useHash = False
+        # style = {
+        # 'borderRadius' : '5px',
+        # },
+        # useHash = False
     )
 
 # st.text(toc)
