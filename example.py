@@ -10,7 +10,7 @@ with st.sidebar:
         'border' : '3px dotted blue',
         'backgroundColor' : 'none'
         },
-        usehash = False
+        useHash = False
     )
 
 # st.text(toc)

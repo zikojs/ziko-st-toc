@@ -1,8 +1,29 @@
-import { TableOfContents } from 'zextra/nav'
+import { TableOfContents } from 'zextra/src/components/nav/table-of-contents'
+import {
+  FrontendRenderer,
+  FrontendRendererArgs,
+} from "@streamlit/component-v2-lib";
 
-const instances = new WeakMap();
+// export type FrontendState = {
+//   // num_clicks: number;
+// };
 
-const MyComponent = ( args ) => {
+// export type ComponentData = {
+//   // name: string;
+// };
+
+// Handle the possibility of multiple instances of the component to keep track
+// of any long-running state for each component instance.
+const instances: WeakMap<
+  FrontendRendererArgs["parentElement"],
+  { 
+    // numClicks: number 
+  }
+> = new WeakMap();
+
+const MyComponent: FrontendRenderer<FrontendState, ComponentData> = (
+  args,
+) => {
 
   const toc = TableOfContents()
   const { parentElement, data, setStateValue } = args;
@@ -16,7 +37,7 @@ const MyComponent = ( args ) => {
   rootElement.innerHTML = '';
   toc.mount(rootElement);
   const links = toc.toc_list.element.querySelectorAll('a');
-  links.forEach((link) => {
+  links.forEach((link: HTMLAnchorElement) => {
     link.addEventListener('click', e=>{
       e.preventDefault()
       const href = link.getAttribute('href') || '';

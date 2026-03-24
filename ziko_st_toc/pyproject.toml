@@ -1,0 +1,8 @@
+# Ship a minimal metadata file that can be picked up by Streamlit at runtime.
+[project]
+name = "ziko-st-toc"
+version = "0.0.1"
+
+[[tool.streamlit.component.components]]
+name = "ziko_st_toc"
+asset_dir = "frontend/build"
