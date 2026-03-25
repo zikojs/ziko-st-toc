@@ -54,7 +54,3 @@ include-package-data = true
 
 [tool.setuptools.package-data]
 ziko_st_toc = ["frontend/build/**/*", "pyproject.toml"]
-
-# # ✅ REQUIRED for Streamlit v2 components
-# [tool.streamlit.components]
-# "ziko-st-toc.ziko_st_toc" = { path = "ziko_st_toc", asset_dir = "frontend/build" }
