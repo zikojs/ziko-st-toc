@@ -1,2 +1,2 @@
 streamlit
-ziko-st-toc==1.0.5
+ziko-st-toc==2.0.1
