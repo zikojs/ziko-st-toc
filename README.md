@@ -16,7 +16,7 @@ A Streamlit component that generates an interactive Table of Contents (TOC) with
 
 ![ziko-st-toc demo](https://raw.githubusercontent.com/zikojs/ziko-st-toc/refs/heads/main/assets/demo.gif)
 
-Visit : https://ziko-st-toc.streamlit.app/
+Visit : https://ziko-st-toc-demo.streamlit.app/
 
 ## Installation instructions
 
