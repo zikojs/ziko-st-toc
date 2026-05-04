@@ -4,7 +4,7 @@
 [![PyPI version](https://img.shields.io/pypi/v/ziko-st-toc.svg)](https://pypi.org/project/ziko-st-toc/)
 [![Downloads](https://img.shields.io/pypi/dm/ziko-st-toc)](https://pypi.org/project/ziko-st-toc/)
 [![License](https://img.shields.io/pypi/l/ziko-st-toc.svg)](https://github.com/zikojs/ziko-st-toc/blob/main/LICENSE)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/04130c58-4a37-4437-8833-bd019eeb5983/deploy-status)](https://app.netlify.com/projects/ziko-st-toc/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/04130c58-4a37-4437-8833-bd019eeb5983/deploy-status)](https://app.netlify.com/projects/ziko-st-toc/deploys) 
 
 
 [![ziko-st-banner](https://github.com/zikojs/ziko-st-toc/blob/main/assets/banner.png?raw=true)](https://github.com/zikojs)
