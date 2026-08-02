@@ -52,8 +52,13 @@ st.header('Header III')
 ## ⭐️ Show your support <a name="support"></a>
 
 If you appreciate the library, kindly demonstrate your support by giving it a star!<br>
-<!-- [![Star](https://img.shields.io/github/stars/zikojs/ziko-st-toc?style=social)](https://github.com/zikojs/ziko-st-toc) -->
+<!-- [![Star](https://img.shields.io/github/stars/zikojs/ziko-st-toc?style=social)](https://github.com/zikojs/ziko-st-toc) 
+
+
+-->
 
 
 ## License 
 This projet is licensed under the terms of MIT License 
+
+
