@@ -1,7 +1,7 @@
 # ziko-st-toc
 
 <!-- 
- rename to st-toc ? 
+ rename to st-toc ?  
 -->
       
 [![PyPI version](https://img.shields.io/pypi/v/ziko-st-toc.svg)](https://pypi.org/project/ziko-st-toc/)
